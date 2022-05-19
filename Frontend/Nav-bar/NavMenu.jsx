@@ -5,7 +5,7 @@ import { Container, Navbar, Nav } from 'react-bootstrap';
 
 function NavMenu() {
   return (
-    <Navbar fixed="top" bg="dark" variant="dark" expand="lg" className="mb-4">
+    <Navbar bg="dark" variant="dark" expand="lg" className="mb-10">
       <Container>
         <Navbar.Brand href="/">Byn-Blocket</Navbar.Brand>
         <Nav className="me-auto">
