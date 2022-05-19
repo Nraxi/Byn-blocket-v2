@@ -1,3 +1,6 @@
-npm i = för installera moduler i backend. 
-
+npm i = för installera moduler i frontend. 
 npm run dev - för development i frontend. 
+npm start fungerar med. 
+
+
+Behövs fixas med backend
