@@ -1,6 +1,10 @@
+cd Frontend
 npm i = för installera moduler i frontend. 
 npm run dev - för development i frontend. 
-npm start fungerar med. 
 
+Npm run build, för att få igång backend delen. 
+npm start för att start Backend i färdig produktion. 
 
-Behövs fixas med backend
+cd frontend, cd Backend, node index.js för sepearat backend
+backend ligger på port 5000.
+Front på 3000. 
