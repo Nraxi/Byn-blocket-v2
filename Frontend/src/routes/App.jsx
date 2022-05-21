@@ -23,24 +23,26 @@ const { Product, Categorie: Category } = factory;
 
 function App() {
 
-  let s = useStates('main', {
-    products: [],
-    categories: [],
-    chosenCategoryId: 0,
-    cartContents: []
-  });
+  // let s = useStates('main', {
+  //   products: [],
+  //   categories: [],
+  //   chosenCategoryId: 0,
+  //   cartContents: []
+  // });
 
-  useEffect(() => {
-    (async () => {
-      // get the categories from the db
-      s.categories = await Category.find();
-      // get the products from the db
-      s.products = await Product.find();
+  // useEffect(() => {
+  //   (async () => {
+  //     // get the categories from the db
+  //     s.categories = await Category.find();
+  //     // get the products from the db
+  //     s.products = await Product.find();
 
-    })();
-  }, []);
+  //   })();
+  // }, []);
 
-  return (s.products.length === 0 ? null :
+  // return (s.products.length === 0 ? null :
+
+  return (
     <Router>
       <NavMenu />
       <Routes>
