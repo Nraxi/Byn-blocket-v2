@@ -11,6 +11,7 @@ function NavMenu() {
         <Nav className="me-auto">
           <Nav.Link href="/shop">Shop</Nav.Link>
           <Nav.Link href="/varukorg">Varukorg</Nav.Link>
+          <Nav.Link href="/backoffice">Backoffice</Nav.Link>
         </Nav>
       </Container>
     </Navbar>
