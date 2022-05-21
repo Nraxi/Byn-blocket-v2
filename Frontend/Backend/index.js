@@ -20,7 +20,7 @@ function serveDistFolder(app) {
   app.use(express.static('dist'));
   // if no file found then serve index.html
   // (and let React Router do the work of routing on the frontend)
-  app.get('*', (req, res) => {
+  app.get('*', (_req, res) => {
     res.sendFile(path.join(__dirname, '../dist', 'index.html'));
   });
 }
