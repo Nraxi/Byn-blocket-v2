@@ -2,9 +2,10 @@ const bestSqlite = require('best-sqlite3');
 const express = require('express');
 const restApi = require('./rest-api');
 const path = require('path');
+const fs = require('fs');
 
 const port = 5000;
-const dbPath = '../database/db.sqlite3';
+const dbPath = '../Database/db.sqlite3';
 
 async function start() {
   const db = await bestSqlite.connect(dbPath);
@@ -21,7 +22,12 @@ function serveDistFolder(app) {
   // if no file found then serve index.html
   // (and let React Router do the work of routing on the frontend)
   app.get('*', (_req, res) => {
-    res.sendFile(path.join(__dirname, '../dist', 'index.html'));
+    let indexPath = path.join(__dirname, '../dist', 'index.html')
+    if (!fs.existsSync(indexPath)) {
+      res.send('No dist folder yet, will be created if you run npm run build....');
+      return;
+    }
+    res.sendFile(indexPath);
   });
 }
 
