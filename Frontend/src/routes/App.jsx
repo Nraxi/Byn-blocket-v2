@@ -5,6 +5,10 @@ import {
   Route,
 } from "react-router-dom";
 
+import { useEffect } from 'react';
+
+import { useStates } from '../../utilities/states.js';
+
 import { factory } from '../../utilities/FetchHelper';
 
 
@@ -18,32 +22,35 @@ import Produktsida from './Produktsida';
 import Beställning from './Beställning';
 import Backoffice from './Backoffice';
 
-const { Product, Categorie: Category } = factory;
+const { produkter: Product, produktkategorier: Category } = factory;
 
 
 
 function App() {
 
-  // let s = useStates('main', {
-  //   products: [],
-  //   categories: [],
-  //   chosenCategoryId: 0,
-  //   cartContents: []
-  // });
+  let s = useStates('main', {
+    products: [],
+    categories: [],
+    chosenCategoryId: 0,
+    cartContents: []
+  });
 
-  // useEffect(() => {
-  //   (async () => {
-  //     // get the categories from the db
-  //     s.categories = await Category.find();
-  //     // get the products from the db
-  //     s.products = await Product.find();
+  useEffect(() => {
+    (async () => {
+      // get the categories from the db
+      s.categories = await Category.find();
+      // get the products from the db
+      s.products = await Product.find();
 
-  //   })();
-  // }, []);
+      console.log(s.products);
+      console.log(s.categories);
 
-  // return (s.products.length === 0 ? null :
+    })();
+  }, []);
 
-  return (
+  return (s.products.length === 0 ? null :
+
+
     <Router>
       <NavMenu />
       <Routes>

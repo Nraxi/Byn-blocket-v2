@@ -59,7 +59,7 @@ export const factory = new Proxy({}, {
       func = new Function('x', `return class ${property} extends x {}`);
     } catch (e) { }
     // create a sub class to FetchHelper
-    let routeName = property.toLowerCase() + 's';
+    let routeName = property.toLowerCase();
     return func(class extends FetchHelper {
       static set route(val) { routeName = val; }
       static get route() { return routeName; }
