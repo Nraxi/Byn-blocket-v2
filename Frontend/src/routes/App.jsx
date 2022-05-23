@@ -21,6 +21,7 @@ import Varukorg from './Varukorg';
 import Produktsida from './Produktsida';
 import Beställning from './Beställning';
 import Backoffice from './Backoffice';
+import Edit from './Edit';
 
 const { produkter: Product, produktkategorier: Category } = factory;
 
@@ -56,6 +57,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Startsida />} />
         <Route path='/Shop' element={<Shop />} />
+        <Route path='/Backoffice/edit' element={<Edit />} />
         <Route path='/Produktsida' element={<Produktsida />} />
         <Route path='/Varukorg' element={<Varukorg />} />
         <Route path='/Beställning' element={<Beställning />} />

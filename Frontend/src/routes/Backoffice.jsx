@@ -1,8 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Backoffice() {
   return (
-    <div>Backoffice</div>
+    <div>
+      <h1>Backoffice</h1>
+
+      <Link to="/Backoffice/edit"><h3>Edit</h3></Link>
+
+    </div>
+
   )
 }
 
